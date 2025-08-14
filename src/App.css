@@ -1,42 +1,207 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+    --eg: #241910;
+    --bg: #fefbf4;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+    font-family: "Dm mono", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.card {
-  padding: 2em;
+h1 {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.1;
 }
 
-.read-the-docs {
-  color: #888;
+p {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--eg);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+}
+
+.btn .primary{
+    background-color: var(--bg);
+}
+
+.btn .primary a{
+    color: var(--eg);
+}
+
+.btn .secondary{
+    background-color: var(--eg);
+}
+
+.btn .secondary a{
+    background-color: var(--bg);
+}
+
+nav{
+    position: fixed;
+    width: 100vw;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    will-change: opacity;
+    z-index: 2;
+}
+
+nav > div{
+    flex: 1;
+}
+
+nav .nav-links{
+    display: flex;
+    gap: 3rem;
+}
+
+nav .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .logo img{
+    width: 2rem;
+}
+
+nav .logo a{
+    text-transform: none;
+    font-family: "Host Grotesk";
+    font-size: 1.5rem;
+}
+
+nav .nav-buttons{
+    display: flex;
+    gap:1.5rem;
+    justify-content: flex-end;
+}
+
+section{
+    position: relative;
+    width: 100vw;
+    height: 100svh;
+    overflow: hidden;
+}
+
+.outro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg);
+    color: var(--eg);
+}
+
+canvas{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    padding: 0.5rem 0;
+}
+
+.header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    color: var(--eg);
+    transform-origin:center;
+    will-change: transform,opcity;
+}
+
+.header h1{
+    width:50%;
+    margin-bottom: 0.5rem;
+}
+
+.header p{
+    opacity: 0.35;
+}
+
+.client-logos{
+    width: 30%;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.client-logos .client-logo{
+    flex: 1;
+}
+
+.client-logos .client-logo img{
+    object-fit:contain ;
+}
+
+.hero-img-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.hero-img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(1000px);
+    opacity: 0;
+    will-change: transform,opacity;
+}
+
+@media (max-width:1000px) {
+    h1{
+        font-size: 2rem;
+    }
+    nav .nav-links,nav .nav-buttons{
+        display: none;
+    }
+    .header h1, .client-logos,.hero-img-container{
+        width: calc(100% - 4rem);
+    }
 }
